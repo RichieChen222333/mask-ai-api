@@ -1,0 +1,9 @@
+import os
+import google.generativeai as genai
+
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+
+print("=== Gemini 可用模型（支援 generateContent）===")
+for m in genai.list_models():
+    if "generateContent" in m.supported_generation_methods:
+        print(m.name)
