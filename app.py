@@ -7,10 +7,10 @@ import traceback
 app = Flask(__name__)
 CORS(app)
 
-# 🔑 設定 Gemini API Key（從環境變數讀）
+# 設定 Gemini API Key（從環境變數讀）
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# 建立 Gemini 模型（教學建議用這個）
+# 建立 Gemini 模型）
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 
